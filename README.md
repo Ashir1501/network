@@ -2,6 +2,7 @@
 
 ### Prerequisite before running the web app
 - Install dependencies (pip install -r requirements.txt)
+- create .env file set SECRET_KEY env variable
 - Make Migrations (python manage.py makemigrations)
 - Migrate (python manage.py migrate)
 
