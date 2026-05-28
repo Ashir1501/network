@@ -1,0 +1,45 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+<input type="hidden" data-post-id="{{ post.id }}" id="pd-post-id">
+<input type="hidden" data-post-username="{{ post.username }}" id="pd-post-username">
+<input type="hidden" data-post-active="{{ post.is_active }}" id="pd-post-active">
+<div id="history-back-div">
+    <img id="history-back-img" src="{% static 'network/arrow-left.svg' %}" alt="back-arrow">
+</div>
+<div id="dummy-height-div"></div>
+<div class="post-detail-container">
+    <div class="pd-flex-container">
+        <div id="post-madeby">@{{ post.username }}</div>
+        <img class="icon-img-size block-display" src="{% static 'network/square-ellipsis.svg' %}" alt="option-img">
+    </div>
+    <section class="btm-border sec-two">{{ post.content }}</section>
+    <div class="pd-flex-container pd-status">
+        <div>
+            <img id="pd-comment-icon" class="icon-img-size" src="{% static 'network/comment-alt-dots.svg' %}" alt="comment-img">
+            <span class="inline-block-display','sec-three-reply-count">{{ post.reply_count }}</span>
+        </div>
+        <div>{{ post.timestamp|date:"g:i A · M j, Y" }}</div>
+        <div>
+            {% if post.is_active %}
+                <img id="pd-like-icon" class="icon-img-size" src="{% static 'network/social-network-pink.png' %}" alt="like-pink-img">
+            {% else %}
+                <img id="pd-like-icon" class="icon-img-size" src="{% static 'network/social-network.svg' %}" alt="like-img">
+            {% endif %}
+            <span id="pd-like-count" class="inline-block-display sec-three-like-count">{{ post.like_count }}</span>
+        </div>
+    </div>
+    <div id="pd-reply-form">
+        <div id="pd-reply-textarea" contenteditable="true" data-placeholder="Post Your Reply..."></div>
+        <div id="pd-reply-btn-div">
+            <div id="pd-reply-button">Reply</div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script type="module" src="{% static 'network/post_detail.js' %}"></script>
+{% endblock %}

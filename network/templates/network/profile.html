@@ -1,0 +1,49 @@
+{% extends 'network/layout.html' %}
+{% load static %}
+
+{% block body %}
+
+<div id="history-back-div">
+    <img id="history-back-img" src="{% static 'network/arrow-left.svg' %}" alt="back-arrow">
+</div>
+<div id="dummy-height-div"></div>
+<div id="profile-header">
+    <div>
+        <h4 id="profile-user" data-username="{{ puser.username }}">{{ puser.username }}</h4>
+        <p>@{{ puser.username }}</p>
+    </div>
+    <div>
+        {% if user.is_authenticated %}
+        {% if puser.username != session_user %}
+        {% if following %}
+        <div id="follow" data-following="{{ following }}">Following</div>
+        {% else %}
+        <div id="follow" data-following="{{ following }}">Follow</div>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+    </div>
+</div>
+<div id="follow-status">
+    <div>
+        <span id="following-count">{{ followings }}</span><span>Following</span>
+    </div>
+    <div>
+        <span id="followers-count">{{ followers }}</span><span>Followers</span>
+    </div>
+</div>
+<div id="posts-types">
+    <div id="my-posts" data-type="Posts">Posts</div>
+    <div id="replied-posts" data-type="Replies">Replies</div>
+    {% if puser.username == session_user %}
+    <div id="liked-posts" data-type="Likes">Likes</div>
+    {% endif %}
+</div>
+<div id="posts-types-container">
+
+</div>
+{% endblock %}
+
+{% block script %}
+<script type="module" src="{% static 'network/profile.js' %}"></script>
+{% endblock%}

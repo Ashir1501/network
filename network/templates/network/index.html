@@ -1,0 +1,17 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+    <div id="post-form">
+        <div id="post-textarea" contenteditable="true" data-placeholder="Write your Post here..."></div>
+        <div>
+            <div id="post-button">Post</div>
+        </div>
+    </div>
+    {% endif %}
+{% endblock %}
+{% block script %}
+    <script type="module" src="{% static 'network/index.js' %}"></script>
+    <!-- <script type="module" src="{% static 'network/post_detail.js' %}"></script> -->
+{% endblock %}

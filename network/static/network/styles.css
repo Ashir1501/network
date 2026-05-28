@@ -1,0 +1,341 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+}
+
+.none-display{
+    display: none;
+}
+
+.body{
+    position: relative;
+    top: 10vh;
+    width: 60%;
+    height: auto;
+    margin: 0 20% 0 20%;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+#post-form{
+    width: 100%;
+    min-height: 20%;
+    border-bottom: 1px solid black;
+}
+#post-form > #post-textarea{   
+    width: 88%;
+    margin: 0 4% 0 8%;
+    padding: 20px 0;
+    height: auto;
+    outline: none;
+    overflow-wrap: break-word;
+    border-bottom: 1px solid black;
+}
+
+#post-form > #post-textarea:empty::before{
+    content: attr(data-placeholder);
+    color: gray;
+    font-style: italic;
+}
+
+#post-form > #post-textarea + div{
+    display: flex;
+    width: 88%;
+    margin: 0 4% 0 8%;
+    padding: 5px 0;
+    justify-content: flex-end;
+}
+
+#post-button{
+    width: 10%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+#post-button:hover{
+    cursor: pointer;
+}
+
+.block-display{
+    display: block;
+}
+
+.btm-border{
+    border-bottom: 1px solid black;
+}
+/* --------------------------------------- */
+/* styles for post container */
+.inline-block-display{
+    display: inline-block;
+}
+.left-margin{
+    margin-left: 20%;
+}
+.sec-one-username{
+    padding: 5px 0 0 5px;
+    width: 40%;
+}
+.sec-one-opt{
+    padding: 5px 5px 0 0;
+    width: 40%;
+}
+.opt-relative{
+    position: relative;
+}
+.sec-two{
+    width: 85%;
+    margin-left: 8%;
+    padding: 10px 0;
+    overflow-wrap: break-word;
+}
+.sec-three-comm{
+    padding: 2px 0 5px 5px;
+    width: 30%;
+}
+.sec-three-dt{
+    padding: 2px 0 5px 5px;
+    width: 30%;
+}
+.sec-three-like{
+    padding: 2px 0 5px 0;
+    width: 30%;
+    margin-left: 10%;
+}
+.sec-three-like-count, .sec-three-reply-count{
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    font-size: large;
+}
+.align-content-right{
+    text-align: right;
+}
+.post-container{
+    border-bottom: 1px solid black;
+}
+.icon-img-size{
+    width: 1.5rem;
+}
+
+/* edit post container  */
+.edit-content{
+    outline: none;
+    height: auto;
+    overflow-wrap: break-word;
+    border-bottom: 1px solid black;
+}
+.edit-link-div{
+    position: absolute;
+    left: 275px;
+    background-color: black;
+    color: white;
+    width: 2rem;
+    top: 35px;
+    text-align: center;
+    padding: 3px;
+    border-radius: 5px;
+}
+/* ------------------------------------------------ */
+
+/* next and previous buttons */
+#pagination-button{
+    display: flex;
+    justify-content: end;
+    padding: 1.5% 2% 0 0;
+}
+.page-button{
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: large;
+}
+#previous{
+    margin-right: 3px;
+}
+/* ----------------------------- */
+
+
+/* reply-modal to post*/
+#reply-form{
+    width: 100%;
+    min-height: 20%;
+}
+
+#reply-form> #reply-textarea{
+    padding-left: 10px;
+    padding-bottom: 5px;
+    height: auto;
+    outline: none;
+    border-bottom: 1px solid black;
+    overflow-wrap: break-word;
+}
+
+#reply-form> #reply-textarea + div{
+    display: flex;
+    padding: 5px 0;
+    justify-content: flex-end;
+}
+
+#reply-button{
+    width: 20%;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: rgb(136, 76, 233);
+    text-align: center;
+}
+
+#reply-form > #reply-textarea:empty::before, #pd-reply-form > #pd-reply-textarea:empty::before{
+    content: attr(data-placeholder);
+    color: gray;
+    font-style: italic;
+}
+
+#reply-button:hover{
+    cursor: pointer;
+}
+/* ------------------------------------------- */
+
+
+/* back arrow icon */
+
+#history-back-div{
+    width: 59.5%;
+    min-height: 2rem;
+    position: fixed;
+    top: 56px;
+    padding: 0.5rem 0 1rem 0.5rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+#history-back-div::before{
+    content: "";
+    inset: -20px; /* This acts as your "spread" */
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+#history-back-img{
+    width: 1.5rem;
+}
+
+/* ------------------- */
+
+/* post detail container  */
+#dummy-height-div{
+    height: 2.6rem;
+}
+
+.post-detail-container{
+    padding: 0 1rem 0 1rem;
+    border-bottom: 1px solid black;
+}
+
+.pd-flex-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pd-status{
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border-bottom: 1px solid black;
+}
+
+#pd-reply-form{
+    width: 85%;
+    margin: 0 5% 0 8%;
+    padding: 1rem 0 0 0;
+}
+
+#pd-reply-textarea{
+    border-bottom: 1px solid black;
+    padding: 0 0 0.5rem 0;
+    outline: none;
+    height: auto;
+    overflow-wrap: break-word;
+}
+
+#pd-reply-btn-div{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#pd-reply-button, #edit-post-button{
+    width: 4rem;
+    border-radius: 16px;
+    color: white;
+    background-color: black;
+    font-size: large;
+    padding: 0.2rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.pd-post-container{
+    border-bottom: 1px solid black;
+}
+
+/* profile page  */
+#profile-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+#profile-header > div{
+    width: 20%;
+    margin: 0.5rem;
+}
+#profile-user{
+    margin-bottom: -0.5rem;
+}
+#profile-header > div > div{
+    border: 1px solid red;
+    margin: 1rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 7px;
+    font-size: larger;
+    cursor: pointer;
+}
+#follow-status{
+    display: flex;
+    justify-content: flex-start;
+}
+#follow-status > div{
+    margin-left: 1rem;
+}
+#follow-status > div span{
+    display: inline-block;
+}
+
+#follow-status > div > span:first-child{
+    font-size: larger;
+    margin-right: 0.5rem;
+}
+
+#posts-types{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #eeeeee75;
+}
+#posts-types > div{
+    background-color: #dfcdb5;
+    margin: 0 0.5rem 0 0.5rem;
+    text-align: center;
+    width: 12%;
+    padding: 0.5rem;
+}
+#posts-types > div:hover{
+    background-color: rgb(215, 186, 186);
+}
+
+.post-types-border-btm{
+    border-bottom: 5px solid #bda5a5;
+}
